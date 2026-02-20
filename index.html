@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Environment-aware Video Instance Removal Challenge @ CVPR VGBE 2026</title>
+    <meta name="description"
+        content="Environment-aware Video Instance Removal Challenge at the 1st Workshop on Video Generative Models: Benchmarks and Evaluation (VGBE) at CVPR 2026. Organized by Abaka AI and Texas A&M University." />
+    <link rel="icon" href="icon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <!-- KaTeX for math rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});"></script>
+    <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+
+    <!-- ========== HERO / TITLE ========== -->
+    <header class="hero">
+        <div class="hero-bg-anim"></div>
+        <div class="hero-content">
+            <img src="icon.png" alt="Challenge Icon" class="hero-icon" />
+            <div class="hero-text">
+                <h1>Environment-aware Video Instance Removal Challenge</h1>
+                <a href="https://vidgen-bench-eval.github.io/" target="_blank" rel="noopener noreferrer"
+                    class="hero-sub">@ CVPR VGBE 2026</a>
+            </div>
+        </div>
+        <div class="hero-badges">
+            <a href="https://www.codabench.org/competitions/14066/" target="_blank" rel="noopener noreferrer"
+                class="badge"><span class="badge-dot"></span>Submissions Open</a>
+            <a href="#dates" class="badge">📅 Deadline: March 25, 2026</a>
+            <a href="#awards" class="badge">🏆 $1,000 Prize Pool</a>
+        </div>
+    </header>
+
+    <!-- ========== VIDEO SHOWCASE ========== -->
+    <section class="video-showcase">
+        <div class="container">
+            <div class="video-grid">
+
+                <!-- 1: drift-turn -->
+                <div class="video-card offset-right">
+                    <div class="video-pair">
+                        <div class="video-half">
+                            <span class="video-label">Input</span>
+                            <video autoplay muted loop playsinline>
+                                <source src="drift-turn/drift-turn.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                        <div class="video-half">
+                            <span class="video-label">Output</span>
+                            <video autoplay muted loop playsinline>
+                                <source src="drift-turn/去除画面中的汽车，同样去除汽车漂移产生的烟雾.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                    </div>
+                    <p class="video-prompt">Remove the car from the scene and eliminate the smoke produced by its
+                        drifting.</p>
+                </div>
+
+                <!-- 2: 000028 (birds) -->
+                <div class="video-card offset-left">
+                    <div class="video-pair">
+                        <div class="video-half">
+                            <span class="video-label">Input</span>
+                            <video autoplay muted loop playsinline>
+                                <source src="000028/a946317a.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                        <div class="video-half">
+                            <span class="video-label">Output</span>
+                            <video autoplay muted loop playsinline>
+                                <source src="000028/去除画面中的鸟类动物，消除它们产生的波纹和水花。.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                    </div>
+                    <p class="video-prompt">Remove the birds from the scene and eliminate the ripples and splashes they
+                        created.</p>
+                </div>
+
+                <!-- 3: 000028_485 (bear) -->
+                <div class="video-card offset-right">
+                    <div class="video-pair">
+                        <div class="video-half">
+                            <span class="video-label">Input</span>
+                            <video autoplay muted loop playsinline>
+                                <source src="000028_485/000028_485.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                        <div class="video-half">
+                            <span class="video-label">Output</span>
+                            <video autoplay muted loop playsinline>
+                                <source src="000028_485/去除画面中的熊，去除熊行走溅起的水花，消除熊行走产生的痕迹.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                    </div>
+                    <p class="video-prompt">Remove the bear from the scene, eliminate the water splashes from its
+                        walking, and erase the tracks it left behind.</p>
+                </div>
+
+                <!-- 4: 000029 (person in water) -->
+                <div class="video-card offset-left">
+                    <div class="video-pair">
+                        <div class="video-half">
+                            <span class="video-label">Input</span>
+                            <video autoplay muted loop playsinline>
+                                <source src="000029/agg57tdn.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                        <div class="video-half">
+                            <span class="video-label">Output</span>
+                            <video autoplay muted loop playsinline>
+                                <source src="000029/Remove the person and the ripples they created in the water..mp4"
+                                    type="video/mp4" />
+                            </video>
+                        </div>
+                    </div>
+                    <p class="video-prompt">Remove the person and the ripples they created in the water.</p>
+                </div>
+
+                <!-- 5: snowboard -->
+                <div class="video-card offset-right">
+                    <div class="video-pair">
+                        <div class="video-half">
+                            <span class="video-label">Input</span>
+                            <video autoplay muted loop playsinline>
+                                <source src="snowboard/snowboard.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                        <div class="video-half">
+                            <span class="video-label">Output</span>
+                            <video autoplay muted loop playsinline>
+                                <source src="snowboard/去除画面正在滑雪的人和他的滑雪板，去除他在雪上扬起的尘雾和雪，消除痕迹.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                    </div>
+                    <p class="video-prompt">Remove the snowboarder and their snowboard, eliminate the snow dust they
+                        kicked up, and erase all tracks.</p>
+                </div>
+
+                <!-- 6: yellow-ball -->
+                <div class="video-card offset-left">
+                    <div class="video-pair">
+                        <div class="video-half">
+                            <span class="video-label">Input</span>
+                            <video autoplay muted loop playsinline>
+                                <source src="yellow-ball/102060.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                        <div class="video-half">
+                            <span class="video-label">Output</span>
+                            <video autoplay muted loop playsinline>
+                                <source src="yellow-ball/runway去除黄色小球.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                    </div>
+                    <p class="video-prompt">Remove the yellow ball from the scene.</p>
+                </div>
+
+                <!-- 7: pour -->
+                <div class="video-card offset-right">
+                    <div class="video-pair">
+                        <div class="video-half">
+                            <span class="video-label">Input</span>
+                            <video autoplay muted loop playsinline>
+                                <source src="pour/100095.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                        <div class="video-half">
+                            <span class="video-label">Output</span>
+                            <video autoplay muted loop playsinline>
+                                <source src="pour/runway.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                    </div>
+                    <p class="video-prompt">Remove the paper from the table.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="main-content">
+        <div class="container">
+
+            <h2 class="section-title" id="overview">Environment-aware Video Instance Removal</h2>
+
+            <div class="content-block intro-block">
+                <p>This challenge is jointly organized by <strong>Abaka AI</strong> and <strong>Texas A&amp;M
+                        University</strong>.</p>
+                <p class="prize-note">Prizes are sponsored by Abaka AI. Special thanks to Abaka AI.</p>
+            </div>
+
+            <!-- Important Dates -->
+            <h3 class="subsection-title" id="dates">📅 Important Dates</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-date">2026.02.20</span>
+                    <span class="timeline-desc">Release of Validation Data (Video + prompt + mask); validation
+                        submission opens.</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">2026.03.25</span>
+                    <span class="timeline-desc">Submission deadline.</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">2026.04.03</span>
+                    <span class="timeline-desc">Technical report deadline for Innovation Award eligibility.</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">2026.04.06</span>
+                    <span class="timeline-desc">Competition results released to participants.</span>
+                </div>
+            </div>
+
+            <!-- Challenge Overview -->
+            <h3 class="subsection-title" id="challenge-overview">🔍 Challenge Overview</h3>
+            <div class="content-block">
+                <p>The <a href="https://vidgen-bench-eval.github.io/" target="_blank"
+                        rel="noopener noreferrer"><strong>1st Workshop on Video Generative Models: Benchmarks and
+                            Evaluation (VGBE)</strong></a> will be held in June 2026 in conjunction with <strong>CVPR
+                        2026</strong>.</p>
+                <p>Recent advances in video generative models, such as Sora, Veo, and Wan, have demonstrated an
+                    unprecedented ability to generate high-fidelity content. However, moving toward practical workflows
+                    requires pushing video editing beyond simple object deletion. In real-world scenarios, removing an
+                    object is complex because objects interact dynamically with their surroundings. A truly realistic
+                    removal requires modeling and regenerating these environmental interactions—such as <strong>shadows,
+                        reflections, water ripples, or secondary motion propagation</strong>—to maintain physical
+                    plausibility.</p>
+                <p>This challenge focuses on <strong>environment-aware</strong> video restoration. Unlike traditional
+                    inpainting, participants must ensure that the "void" left by a removed object is filled with content
+                    that is not only visually consistent but also physically coherent with the rest of the scene. This
+                    requires a deep semantic understanding of how objects influence their environment through lighting,
+                    physics, and geometry.</p>
+                <p>Hosting this challenge accelerates the development of models capable of sophisticated,
+                    physically-grounded video manipulation. It provides a standardized benchmark to evaluate how
+                    effectively these systems can restore complex environments while maintaining perfect temporal
+                    stability.</p>
+                <blockquote>
+                    <p><em>The top-ranked participants will be awarded and invited to describe their solution to the
+                            associated VGBE workshop at CVPR 2026. The results of the challenge will be published in the
+                            VGBE 2026 workshop (CVPR Proceedings).</em></p>
+                </blockquote>
+            </div>
+
+            <!-- Task Definition -->
+            <h3 class="subsection-title" id="task">📋 Task Definition</h3>
+            <div class="content-block">
+                <p><strong>Task:</strong> Environment-aware Video Instance Removal</p>
+                <p>Given an <strong>Input Video</strong>, a <strong>Text Prompt</strong> describing the object, and a
+                    <strong>Segmentation Mask</strong>, the model must generate a video that:</p>
+                <ul class="criteria-list">
+                    <li><strong>Environmentally Aware:</strong> Realistically reflects environmental changes (shadows,
+                        ripples, etc.) caused by the object's removal.</li>
+                    <li><strong>Temporally Coherent:</strong> Maintains stability and visual realism across all frames
+                        without flickering.</li>
+                    <li><strong>Exclusive in Editing:</strong> Preserves all unrelated regions of the video perfectly.
+                    </li>
+                </ul>
+
+                <h4>Output Specifications</h4>
+                <p>To ensure fairness and standardized evaluation, all submissions must adhere to the following
+                    technical constraints:</p>
+                <ul>
+                    <li><strong>Frames:</strong> The generated video sequence must have <strong>strictly the same number
+                            of frames</strong> as the original video.</li>
+                    <li><strong>Resolution:</strong>
+                        <ul>
+                            <li><strong>Minimum:</strong> <strong>480p</strong> (e.g., $854 \times 480$).</li>
+                            <li><strong>Recommended:</strong> <strong>720p</strong> (e.g., $1280 \times 720$) or higher.
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Aspect Ratio:</strong> The output video must <strong>preserve</strong> the aspect ratio
+                        of the input video. <strong>Cropping or distorting</strong> the input aspect ratio will result
+                        in significant score deductions.</li>
+                </ul>
+
+                <h4>Recommended Baselines / Architectures</h4>
+                <p>We encourage participants to explore or build upon recent efficient architectures, such as:</p>
+                <ol>
+                    <li><a href="https://github.com/Vchitect/DiffuEraser" target="_blank" rel="noopener noreferrer"
+                            class="paper-link"><strong>DiffuEraser</strong>: Video Inpainting Using Diffusion Models
+                            <span class="link-icon">↗</span></a></li>
+                    <li><a href="https://arxiv.org/abs/2602.08277" target="_blank" rel="noopener noreferrer"
+                            class="paper-link"><strong>PISCO</strong>: Precise Video Instance Insertion with Sparse
+                            Control <span class="link-icon">↗</span></a></li>
+                </ol>
+            </div>
+
+            <!-- Evaluation -->
+            <h3 class="subsection-title" id="evaluation">📊 Evaluation</h3>
+            <div class="content-block">
+                <p>The evaluation process consists of two primary components:</p>
+                <ol>
+                    <li><strong>Automated Evaluation (VBench):</strong> We utilize <strong>VBench</strong> to provide an
+                        objective assessment of video quality and perceptual fidelity.</li>
+                    <li><strong>Human Evaluation:</strong> A panel of experts will score each entry across four key
+                        dimensions:
+                        <ul>
+                            <li><strong>Environmental Awareness (55%):</strong> Realism of environmental restoration
+                                (shadows, reflections, etc.).</li>
+                            <li><strong>Instruction Following (15%):</strong> Is the correct object removed as
+                                specified?</li>
+                            <li><strong>Rendering Quality (15%):</strong> Is the video visually and temporally coherent?
+                            </li>
+                            <li><strong>Exclusivity of Edit (15%):</strong> Are unrelated regions preserved without
+                                artifacts?</li>
+                        </ul>
+                    </li>
+                </ol>
+                <blockquote>
+                    <p><strong>Human Evaluation Score:</strong> Calculated as the weighted sum of the four dimensions
+                        above.</p>
+                </blockquote>
+
+                <h4>Final Score Calculation</h4>
+                <p>To balance objective performance with human-centric quality, the final ranking is determined by:</p>
+                <div class="formula">
+                    $$\text{Final Score} = 0.2 \times \text{VBench Score} + 0.8 \times \text{Human Evaluation Score}$$
+                </div>
+            </div>
+
+            <!-- Awards -->
+            <h3 class="subsection-title" id="awards">🏆 Awards</h3>
+            <div class="content-block awards-block">
+                <p>We have established a total prize pool of <strong>$1,000 USD</strong>:</p>
+                <div class="awards-grid">
+                    <div class="award-card champion">
+                        <div class="award-icon">🏆</div>
+                        <h4>Highest Score Award (Champion)</h4>
+                        <p class="award-prize">$500 USD</p>
+                        <p class="award-extra">+ Award Certificate</p>
+                    </div>
+                    <div class="award-card innovation">
+                        <div class="award-icon">🌟</div>
+                        <h4>Innovation Award</h4>
+                        <p class="award-prize">$500 USD</p>
+                        <p class="award-extra">+ Award Certificate</p>
+                        <p class="award-note">Recognizes technically novel or methodologically inspiring contributions.
+                            A technical report is required.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact -->
+            <h3 class="subsection-title" id="contact">📧 Issues &amp; Contact</h3>
+            <div class="content-block">
+                <ul>
+                    <li><strong>Technical Discussions:</strong> Please utilize the community forum on the official
+                        challenge page.</li>
+                    <li><strong>Inquiries:</strong> Contact the organizing committee at <a
+                            href="mailto:tcve-cvpr-2026@googlegroups.com">tcve-cvpr-2026@googlegroups.com</a>.</li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>Environment-aware Video Instance Removal Challenge @ CVPR VGBE 2026</p>
+            <p class="footer-sub">Organized by Abaka AI &amp; Texas A&amp;M University</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
